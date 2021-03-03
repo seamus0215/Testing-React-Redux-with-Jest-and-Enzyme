@@ -1,6 +1,33 @@
+import React, { Component } from "react";
+import Header from "./component/header";
+import Headline from "./component/headline";
+import "./app.scss";
 
-function App() {
-  return <div className="App">Test</div>;
+const tempArr = [
+  {
+    fName: "Joe",
+    lName: "Blake",
+    email: "joeblake@gmail.com",
+    age: 24,
+    onlineStatus: true,
+  },
+];
+
+class App extends Component {
+  render() {
+    return (
+      <div className="App">
+        <Header />
+        <section className="main">
+          <Headline
+            header="Posts"
+            desc="Click on the button to render posts."
+            tempArr={tempArr}
+          />
+        </section>
+      </div>
+    );
+  }
 }
 
 export default App;
